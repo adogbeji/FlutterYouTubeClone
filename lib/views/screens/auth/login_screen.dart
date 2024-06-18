@@ -7,6 +7,13 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.grey,
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            children: [],
+          ),
+        ),
+      ),
     );
   }
 }
