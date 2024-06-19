@@ -5,12 +5,14 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.grey,
       body: SafeArea(
         child: Center(
           child: Column(
-            children: [],
+            children: [
+              Image.asset('assets/images/youtube-signin.jpg'),
+            ],
           ),
         ),
       ),
