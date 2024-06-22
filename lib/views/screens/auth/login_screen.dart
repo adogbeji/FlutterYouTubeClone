@@ -21,7 +21,6 @@ class LoginScreen extends StatelessWidget {
                   height: 150,
                 ),
               ),
-
               const Text(
                 'Welcome To YouTube',
                 style: TextStyle(
@@ -30,12 +29,18 @@ class LoginScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-
               const Spacer(),
-
               Padding(
-                padding: const EdgeInsets.only(bottom: 55,),
-                child: Image.asset('assets/images/signinwithgoogle.png', height: 60,),
+                padding: const EdgeInsets.only(
+                  bottom: 55,
+                ),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Image.asset(
+                    'assets/images/signinwithgoogle.png',
+                    height: 60,
+                  ),
+                ),
               ),
             ],
           ),
