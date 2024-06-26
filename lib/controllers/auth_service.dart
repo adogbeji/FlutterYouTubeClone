@@ -9,7 +9,12 @@ class AuthService {
 
   signInWithGoogle() async {
     final user = await googleSignIn.signIn();  // Opens modal from which user can choose google account to sign in with
-    final googleAuth = user!.authentication;  // Causes user to be signed in
-    GoogleAuthProvider.credential();  // Creates user credentials
+    final googleAuth = await user!.authentication;  // Causes user to be signed in
+    final credential = GoogleAuthProvider.credential(  // Creates user credentials
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+
+    await auth.signInWithCredential(credential);  // Connects firebase_auth with google_sign_in
   }
 }
