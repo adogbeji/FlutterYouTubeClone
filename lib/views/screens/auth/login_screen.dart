@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+class LoginScreen extends ConsumerWidget {
   const LoginScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       // backgroundColor: Colors.grey,
       body: SafeArea(
