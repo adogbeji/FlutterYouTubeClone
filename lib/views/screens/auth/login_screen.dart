@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:youtube_clone/controllers/auth_service.dart';
+
 class LoginScreen extends ConsumerWidget {
   const LoginScreen({super.key});
 
@@ -37,7 +39,9 @@ class LoginScreen extends ConsumerWidget {
                   bottom: 55,
                 ),
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    ref.read(authServiceProvider);
+                  },
                   child: Image.asset(
                     'assets/images/signinwithgoogle.png',
                     height: 60,
