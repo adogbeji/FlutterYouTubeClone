@@ -39,8 +39,8 @@ class LoginScreen extends ConsumerWidget {
                   bottom: 55,
                 ),
                 child: GestureDetector(
-                  onTap: () {
-                    ref.read(authServiceProvider);
+                  onTap: () async {
+                    await ref.read(authServiceProvider).signInWithGoogle();
                   },
                   child: Image.asset(
                     'assets/images/signinwithgoogle.png',
