@@ -12,12 +12,12 @@ final userDataServiceProvider = Provider(
 );
 
 class UserDataService {
-  UserDataService({required this.auth, required this.firestore});
-
   FirebaseAuth auth;
   FirebaseFirestore firestore;
 
+  UserDataService({required this.auth, required this.firestore});
   
+
   // Adds User Data to Firestore Database
   addUserDataToFirestore({
     required String displayName,
@@ -35,13 +35,27 @@ class UserDataService {
       videos: 0,
       userId: auth.currentUser!.uid,
       description: description,
-      type: 'user',
+      type: "user",
     );
-    
+
     // Adds user data to 'users' collection
     await firestore
         .collection('users')
         .doc(auth.currentUser!.uid)
         .set(user.toMap());
+  }
+
+  Future<UserModel> fetchCurrentUserData() async {
+    final currentUserMap =
+        await firestore.collection('users').doc(auth.currentUser!.uid).get();
+    UserModel user = UserModel.fromMap(currentUserMap.data()!);
+    return user;
+  }
+
+  Future<UserModel> fetchAnyUserData(userId) async {
+    final currentUserMap =
+        await firestore.collection('users').doc(userId).get();
+    UserModel user = UserModel.fromMap(currentUserMap.data()!);
+    return user;
   }
 }

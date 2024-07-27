@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'firebase_options.dart';
 
 import 'package:youtube_clone/views/screens/auth/login_screen.dart';
+import 'package:youtube_clone/views/screens/auth/username_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized(); // Ensures all Flutter widgets have been successfully initialised
@@ -27,16 +28,16 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // home: const LoginScreen(),
-      home: StreamBuilder(
-        stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return const LoginScreen();
-          }
-          return Container();
-        },
-      ),
+      home: const UsernameScreen(),
+      // home: StreamBuilder(
+      //   stream: FirebaseAuth.instance.authStateChanges(),
+      //   builder: (context, snapshot) {
+      //     if (!snapshot.hasData) {
+      //       return const LoginScreen();
+      //     }
+      //     return Container();
+      //   },
+      // ),
     );
   }
 }
