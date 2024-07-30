@@ -28,6 +28,18 @@ class UsernameScreen extends StatelessWidget {
                     color: Colors.blue,
                   ),
                 ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.blue,
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.green,
+                  ),
+                ),
+                suffixIcon: Icon(Icons.verified_user_rounded),
+                suffixIconColor: Colors.green,
               ),
             ),
           ],
