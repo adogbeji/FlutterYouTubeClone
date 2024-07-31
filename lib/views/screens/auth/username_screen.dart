@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/views/widgets/flat_button.dart';
 
 class UsernameScreen extends StatelessWidget {
   const UsernameScreen({super.key});
@@ -46,7 +47,9 @@ class UsernameScreen extends StatelessWidget {
               ),
             ),
 
-            Spacer(),
+            const Spacer(),
+
+            FlatButton(text: 'CONTINUE', onPressed: () {}, colour: Colors.green),
           ],
         ),
       ),
