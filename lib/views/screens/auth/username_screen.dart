@@ -9,17 +9,20 @@ class UsernameScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const Padding(
               padding: EdgeInsets.symmetric(
                 vertical: 26,
                 horizontal: 14,
               ),
-              child: Text('Enter the username', style: TextStyle(
-                color: Colors.blueGrey,
-              ),),
+              child: Text(
+                'Enter the username',
+                style: TextStyle(
+                  color: Colors.blueGrey,
+                ),
+              ),
             ),
-
             Padding(
               padding: const EdgeInsets.only(left: 15, right: 15),
               child: TextFormField(
@@ -46,10 +49,19 @@ class UsernameScreen extends StatelessWidget {
                 ),
               ),
             ),
-
             const Spacer(),
-
-            FlatButton(text: 'CONTINUE', onPressed: () {}, colour: Colors.green),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 8,
+                right: 8,
+                bottom: 30,
+              ),
+              child: FlatButton(
+                text: 'CONTINUE',
+                onPressed: () {},
+                colour: Colors.green,
+              ),
+            ),
           ],
         ),
       ),
