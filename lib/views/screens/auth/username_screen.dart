@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/views/widgets/flat_button.dart';
 
@@ -12,6 +13,20 @@ class _UsernameScreenState extends State<UsernameScreen> {
   final formKey = GlobalKey<FormState>();
 
   final TextEditingController usernameController = TextEditingController();
+
+
+  // CHECKS IF USERNAME EXISTS IN DATABASE
+  void validateUsername() async {
+    final usersMap = await FirebaseFirestore.instance.collection('users').get();  // Gets all users in database
+
+    final users = usersMap.docs.map((user) => user).toList();  // List of users
+
+    String targetedUsername;
+    
+    for (var user in users) {  // Checking eery single userame in database
+      if (usernameController.text == user.data()['username']) {}
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
