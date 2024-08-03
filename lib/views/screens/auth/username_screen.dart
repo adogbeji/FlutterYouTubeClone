@@ -9,6 +9,10 @@ class UsernameScreen extends StatefulWidget {
 }
 
 class _UsernameScreenState extends State<UsernameScreen> {
+  final formKey = GlobalKey<FormState>();
+
+  final TextEditingController usernameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +36,8 @@ class _UsernameScreenState extends State<UsernameScreen> {
               padding: const EdgeInsets.only(left: 15, right: 15),
               child: Form(
                 child: TextFormField(
+                  key: formKey,
+                  controller: usernameController,
                   decoration: const InputDecoration(
                     labelText: 'Username',
                     hintText: 'Enter Username...',
