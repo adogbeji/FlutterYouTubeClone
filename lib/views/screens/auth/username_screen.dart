@@ -59,6 +59,10 @@ class _UsernameScreenState extends State<UsernameScreen> {
               padding: const EdgeInsets.only(left: 15, right: 15),
               child: Form(
                 child: TextFormField(
+                  onChanged: (username) {
+                    validateUsername();
+                  },
+                  autovalidateMode: AutovalidateMode.always,
                   key: formKey,
                   controller: usernameController,
                   decoration: const InputDecoration(
