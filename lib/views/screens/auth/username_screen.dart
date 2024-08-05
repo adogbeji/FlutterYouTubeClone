@@ -13,18 +13,26 @@ class _UsernameScreenState extends State<UsernameScreen> {
   final formKey = GlobalKey<FormState>();
 
   final TextEditingController usernameController = TextEditingController();
+  bool isValidate = true;  // Allows us to keep track of validation
 
 
   // CHECKS IF USERNAME EXISTS IN DATABASE
   void validateUsername() async {
     final usersMap = await FirebaseFirestore.instance.collection('users').get();  // Gets all users in database
-
     final users = usersMap.docs.map((user) => user).toList();  // List of users
-
-    String targetedUsername;
+    String? targetedUsername;
     
     for (var user in users) {  // Checking eery single userame in database
-      if (usernameController.text == user.data()['username']) {}
+      if (usernameController.text == user.data()['username']) {
+        targetedUsername = user.data()['username'];
+        isValidate = false;
+        setState(() {});
+      }
+
+      if (usernameController.text != targetedUsername) {
+        isValidate = true;
+        setState(() {});
+      }
     }
   }
 
