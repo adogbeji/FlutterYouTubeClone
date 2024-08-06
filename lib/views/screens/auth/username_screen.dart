@@ -65,26 +65,26 @@ class _UsernameScreenState extends State<UsernameScreen> {
                   autovalidateMode: AutovalidateMode.always,
                   key: formKey,
                   controller: usernameController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'Username',
                     hintText: 'Enter Username...',
-                    border: OutlineInputBorder(
+                    border: const OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.blue,
                       ),
                     ),
-                    enabledBorder: OutlineInputBorder(
+                    enabledBorder: const OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.blue,
                       ),
                     ),
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: const OutlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.green,
                       ),
                     ),
-                    suffixIcon: Icon(Icons.verified_user_rounded),
-                    suffixIconColor: Colors.green,
+                    suffixIcon: isValidate ? Icon(Icons.verified_user_rounded): Icon(Icons.cancel),
+                    suffixIconColor: isValidate ? Colors.green: Colors.red,
                   ),
                 ),
               ),
@@ -98,8 +98,10 @@ class _UsernameScreenState extends State<UsernameScreen> {
               ),
               child: FlatButton(
                 text: 'CONTINUE',
-                onPressed: () {},
-                colour: Colors.green,
+                onPressed: () {
+                  // Add user data to database
+                },
+                colour: isValidate ? Colors.green : Colors.green.shade100,
               ),
             ),
           ],
