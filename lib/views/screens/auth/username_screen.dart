@@ -1,15 +1,27 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:youtube_clone/controllers/user_data_service.dart';
 import 'package:youtube_clone/views/widgets/flat_button.dart';
 
-class UsernameScreen extends StatefulWidget {
-  const UsernameScreen({super.key});
+class UsernameScreen extends ConsumerStatefulWidget {
+  final String displayName;
+  final String profilePic;
+  final String email;
+  
+  const UsernameScreen({
+    super.key,
+    required this.displayName,
+    required this.profilePic,
+    required this.email,
+  });
 
   @override
-  State<UsernameScreen> createState() => _UsernameScreenState();
+  ConsumerState<UsernameScreen> createState() => _UsernameScreenState();
 }
 
-class _UsernameScreenState extends State<UsernameScreen> {
+class _UsernameScreenState extends ConsumerState<UsernameScreen> {
   final formKey = GlobalKey<FormState>();
 
   final TextEditingController usernameController = TextEditingController();
@@ -100,6 +112,15 @@ class _UsernameScreenState extends State<UsernameScreen> {
                 text: 'CONTINUE',
                 onPressed: () {
                   // Add user data to database
+
+                  ref.read(userDataServiceProvider)
+                      .addUserDataToFirestore(
+                        displayName: widget.displayName, 
+                        username: username, 
+                        email: widget.email, 
+                        description: description, 
+                        profilePic: widget.profilePic,
+                      );
                 },
                 colour: isValidate ? Colors.green : Colors.green.shade100,
               ),
