@@ -75,6 +75,9 @@ class _UsernameScreenState extends ConsumerState<UsernameScreen> {
                     validateUsername();
                   },
                   autovalidateMode: AutovalidateMode.always,
+                  validator: (username) {
+                    return isValidate ? null : 'username already taken';
+                  },
                   key: formKey,
                   controller: usernameController,
                   decoration: InputDecoration(
@@ -110,17 +113,17 @@ class _UsernameScreenState extends ConsumerState<UsernameScreen> {
               ),
               child: FlatButton(
                 text: 'CONTINUE',
-                onPressed: () {
+                onPressed: () async {
                   // Add user data to database
 
-                  ref.read(userDataServiceProvider)
+                  isValidate ? await ref.read(userDataServiceProvider)
                       .addUserDataToFirestore(
                         displayName: widget.displayName, 
-                        username: username, 
+                        username: usernameController.text, 
                         email: widget.email, 
-                        description: description, 
+                        description: '', 
                         profilePic: widget.profilePic,
-                      );
+                      ): null;
                 },
                 colour: isValidate ? Colors.green : Colors.green.shade100,
               ),
