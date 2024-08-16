@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:youtube_clone/controllers/auth_service.dart';
+
+class LoginScreen extends ConsumerWidget {
   const LoginScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       // backgroundColor: const Color.fromARGB(255, 247, 244, 244),
       body: SafeArea(
@@ -35,7 +38,9 @@ class LoginScreen extends StatelessWidget {
                   bottom: 55,
                 ),
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () async {
+                    await ref.read(authServiceProvider).signInWithGoogle();
+                  },
                   child: Image.asset(
                     'assets/images/signinwithgoogle.png',
                     height: 60,
