@@ -6,8 +6,16 @@ class UsernameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Username Screen'),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: 26,
+            horizontal: 14,
+          ),
+          child: Text('Enter Username', style: TextStyle(
+            color: Colors.blueGrey,
+          ),),
+        ),
       ),
     );
   }

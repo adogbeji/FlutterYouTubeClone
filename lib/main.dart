@@ -1,9 +1,12 @@
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:youtube_clone/views/home_screen.dart';
+import 'package:youtube_clone/views/screens/username_screen.dart';
 import 'firebase_options.dart';
 
 import 'package:youtube_clone/views/screens/auth/login_screen.dart';
@@ -30,15 +33,17 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const LoginScreen(),
-      home: StreamBuilder(
-        stream: FirebaseAuth.instance.authStateChanges(),  // Checks what's happening in Firebase Auth
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return const LoginScreen();
-          } 
-          return const HomeScreen();
-        },
-      ),
+      home: const UsernameScreen(),
+
+      // home: StreamBuilder(
+      //   stream: FirebaseAuth.instance.authStateChanges(),  // Checks what's happening in Firebase Auth
+      //   builder: (context, snapshot) {
+      //     if (!snapshot.hasData) {
+      //       return const LoginScreen();
+      //     } 
+      //     return const HomeScreen();
+      //   },
+      // ),
     );
   }
 }
