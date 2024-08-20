@@ -38,11 +38,12 @@ class UserDataService {
       description: description,
       type: 'user',
     );
-
+    
+    // Adds user data to 'users' collection
     await firestore
         .collection('users')
         .doc(auth.currentUser!.uid)
-        .set(user.toMap());
+        .set(user.toMap());  // toMap() allows you to add all data to Firestore Database
   }
 
   Future<UserModel> fetchCurrentUserData() async {
