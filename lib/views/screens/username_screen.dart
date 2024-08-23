@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/cores/widgets/flat_button.dart';
 
-class UsernameScreen extends StatelessWidget {
+class UsernameScreen extends StatefulWidget {
   const UsernameScreen({super.key});
 
+  @override
+  State<UsernameScreen> createState() => _UsernameScreenState();
+}
+
+class _UsernameScreenState extends State<UsernameScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,27 +34,29 @@ class UsernameScreen extends StatelessWidget {
                 left: 15,
                 right: 15,
               ),
-              child: TextFormField(
-                decoration: const InputDecoration(
-                  labelText: 'Username',
-                  hintText: 'Enter username...',
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue,
+              child: Form(
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                    labelText: 'Username',
+                    hintText: 'Enter username...',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blue,
+                      ),
                     ),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue,
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blue,
+                      ),
                     ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.green,
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.green,
+                      ),
                     ),
+                    suffixIcon: Icon(Icons.verified_user_rounded),
+                    suffixIconColor: Colors.green,
                   ),
-                  suffixIcon: Icon(Icons.verified_user_rounded),
-                  suffixIconColor: Colors.green,
                 ),
               ),
             ),
