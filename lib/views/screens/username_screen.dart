@@ -18,17 +18,17 @@ class _UsernameScreenState extends State<UsernameScreen> {
   // Checks if username already exists in database
   void validateUsername() async {
     final usersMap = await FirebaseFirestore.instance.collection('users').get();  // Gets all data in users collection
-    final users = usersMap.docs.map((user) => user).toList();
-    String? targetedUsername;
+    final users = usersMap.docs.map((user) => user).toList();  // Gives us a list of users
+    String? targetedUsername;  // Stores username which exists in database
 
     for (var user in users) {
       if (usernameController.text == user.data()['username']) {
         targetedUsername = user.data()['username'];
-        isValidate = false;
+        isValidate = false;  // Validation failed, user can't continue
         setState(() {});
       }
       if (usernameController.text != targetedUsername) {
-        isValidate = true;
+        isValidate = true;  // Validation succeeded
         setState(() {});
       }
     }
@@ -62,6 +62,10 @@ class _UsernameScreenState extends State<UsernameScreen> {
               child: Form(
                 child: TextFormField(
                   key: formKey,
+                  onChanged: (username) {
+                    validateUsername();
+                  },
+                  autovalidateMode: AutovalidateMode.always,
                   controller: usernameController,
                   decoration: const InputDecoration(
                     labelText: 'Username',
