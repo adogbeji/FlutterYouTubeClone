@@ -1,9 +1,11 @@
 // import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:youtube_clone/cores/screens/loader.dart';
 
 import 'package:youtube_clone/views/home_screen.dart';
 import 'package:youtube_clone/views/screens/username_screen.dart';
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const LoginScreen(),
-      home: const UsernameScreen(),
+      // home: const UsernameScreen(),
 
       // home: StreamBuilder(
       //   stream: FirebaseAuth.instance.authStateChanges(),  // Checks what's happening in Firebase Auth
@@ -44,6 +46,37 @@ class MyApp extends StatelessWidget {
       //     return const HomeScreen();
       //   },
       // ),
+
+      home: StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return const LoginScreen();
+          } else if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Loader();
+          }
+          return StreamBuilder(
+            stream: FirebaseFirestore.instance
+                .collection("users")
+                .doc(FirebaseAuth.instance.currentUser!.uid)
+                .snapshots(),
+            builder: (context, snapshot) {
+              final user = FirebaseAuth.instance.currentUser;
+              if (!snapshot.hasData || !snapshot.data!.exists) {
+                return UsernameScreen(
+                  displayName: user!.displayName!,
+                  profilePic: user.photoURL!,
+                  email: user.email!,
+                );
+              } else if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Loader();
+              }
+              return const HomeScreen();
+            },
+          );
+        },
+      ),
+
     );
   }
 }
