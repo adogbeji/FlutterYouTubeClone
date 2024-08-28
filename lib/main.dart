@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: const LoginScreen(),
       // home: const UsernameScreen(),
+      home: const HomeScreen(),
 
       // home: StreamBuilder(
       //   stream: FirebaseAuth.instance.authStateChanges(),  // Checks what's happening in Firebase Auth
@@ -47,35 +48,35 @@ class MyApp extends StatelessWidget {
       //   },
       // ),
 
-      home: StreamBuilder(
-        stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return const LoginScreen();
-          } else if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Loader();
-          }
-          return StreamBuilder(
-            stream: FirebaseFirestore.instance
-                .collection("users")
-                .doc(FirebaseAuth.instance.currentUser!.uid)
-                .snapshots(),
-            builder: (context, snapshot) {
-              final user = FirebaseAuth.instance.currentUser;
-              if (!snapshot.hasData || !snapshot.data!.exists) {
-                return UsernameScreen(
-                  displayName: user!.displayName!,
-                  profilePic: user.photoURL!,
-                  email: user.email!,
-                );
-              } else if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Loader();
-              }
-              return const HomeScreen();
-            },
-          );
-        },
-      ),
+      // home: StreamBuilder(
+      //   stream: FirebaseAuth.instance.authStateChanges(),
+      //   builder: (context, snapshot) {
+      //     if (!snapshot.hasData) {
+      //       return const LoginScreen();
+      //     } else if (snapshot.connectionState == ConnectionState.waiting) {
+      //       return const Loader();
+      //     }
+      //     return StreamBuilder(
+      //       stream: FirebaseFirestore.instance
+      //           .collection("users")
+      //           .doc(FirebaseAuth.instance.currentUser!.uid)
+      //           .snapshots(),
+      //       builder: (context, snapshot) {
+      //         final user = FirebaseAuth.instance.currentUser;
+      //         if (!snapshot.hasData || !snapshot.data!.exists) {
+      //           return UsernameScreen(
+      //             displayName: user!.displayName!,
+      //             profilePic: user.photoURL!,
+      //             email: user.email!,
+      //           );
+      //         } else if (snapshot.connectionState == ConnectionState.waiting) {
+      //           return const Loader();
+      //         }
+      //         return const HomeScreen();
+      //       },
+      //     );
+      //   },
+      // ),
 
     );
   }
