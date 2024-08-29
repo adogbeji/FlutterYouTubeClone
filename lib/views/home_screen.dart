@@ -50,9 +50,12 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                const CircleAvatar(
-                  radius: 15,
-                  backgroundColor: Colors.grey,
+                const Padding(
+                  padding: EdgeInsets.only(right: 12),
+                  child: CircleAvatar(
+                    radius: 15,
+                    backgroundColor: Colors.grey,
+                  ),
                 ),
               ],
             ),
