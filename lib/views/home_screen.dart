@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:youtube_clone/cores/widgets/image_button.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -49,6 +52,10 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                // Consumer(builder: (context, ref, child) {
+                //   ref.watch();
+                // }),
 
                 const Padding(
                   padding: EdgeInsets.only(right: 12),
