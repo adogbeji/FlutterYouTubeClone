@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:youtube_clone/cores/screens/error_page.dart';
+import 'package:youtube_clone/cores/screens/loader.dart';
 import 'package:youtube_clone/cores/widgets/image_button.dart';
+import 'package:youtube_clone/views/screens/auth/provider/user_proivider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -53,9 +56,20 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                // Consumer(builder: (context, ref, child) {
-                //   ref.watch();
-                // }),
+                Consumer(builder: (context, ref, child) {
+                  ref.watch(currentUserProvider)
+                     .when(
+                      data: (currentUser) => const Padding(
+                  padding: EdgeInsets.only(right: 12),
+                  child: CircleAvatar(
+                    radius: 15,
+                    backgroundColor: Colors.grey,
+                  ),
+                ),
+                      error: (error, stackTrace) => const ErrorScreen(), 
+                      loading: () => const Loader(),
+                    );
+                }),
 
                 const Padding(
                   padding: EdgeInsets.only(right: 12),
