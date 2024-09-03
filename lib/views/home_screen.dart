@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -57,13 +58,14 @@ class HomeScreen extends StatelessWidget {
                 ),
 
                 Consumer(builder: (context, ref, child) {
-                  ref.watch(currentUserProvider)
+                  return ref.watch(currentUserProvider)
                      .when(
-                      data: (currentUser) => const Padding(
-                  padding: EdgeInsets.only(right: 12),
+                      data: (currentUser) => Padding(
+                  padding: const EdgeInsets.only(right: 12),
                   child: CircleAvatar(
                     radius: 15,
                     backgroundColor: Colors.grey,
+                    backgroundImage: CachedNetworkImageProvider(currentUser.profilePic),
                   ),
                 ),
                       error: (error, stackTrace) => const ErrorScreen(), 
