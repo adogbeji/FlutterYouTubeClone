@@ -117,27 +117,32 @@ class MyChannelScreen extends StatelessWidget {
                   ),
                 ),
 
-                const TabBarView(
-                  children: [
-                    Center(
-                      child: Text('Home'),
-                    ),
-                    Center(
-                      child: Text('Home'),
-                    ),
-                    Center(
-                      child: Text('Home'),
-                    ),
-                    Center(
-                      child: Text('Home'),
-                    ),
-                    Center(
-                      child: Text('Home'),
-                    ),
-                    Center(
-                      child: Text('Home'),
-                    ),
-                  ],
+                const Expanded(
+                  child: TabBarView(
+                    children: [
+                      Center(
+                        child: Text('Home'),
+                      ),
+                      Center(
+                        child: Text('Videos'),
+                      ),
+                      Center(
+                        child: Text('Shorts'),
+                      ),
+                      Center(
+                        child: Text('Community'),
+                      ),
+                      Center(
+                        child: Text('Playlists'),
+                      ),
+                      Center(
+                        child: Text('Channel'),
+                      ),
+                      Center(
+                        child: Text('About'),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
