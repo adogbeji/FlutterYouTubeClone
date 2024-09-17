@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:youtube_clone/cores/colors.dart';
 
 import 'package:youtube_clone/cores/widgets/image_button.dart';
+import 'package:youtube_clone/features/channel/my_channel/widgets/top_header.dart';
 
 class MyChannelScreen extends StatelessWidget {
   const MyChannelScreen({super.key});
@@ -17,6 +18,7 @@ class MyChannelScreen extends StatelessWidget {
             padding: const EdgeInsets.only(top: 20),
             child: Column(
               children: [
+                const TopHeader(),
                 // const Center(
                 //   child: CircleAvatar(
                 //     radius: 38,
@@ -95,27 +97,27 @@ class MyChannelScreen extends StatelessWidget {
                 ),
       
                 // Create tab bar
-                const Padding(
-                  padding: EdgeInsets.only(top: 14),
-                  child: TabBar(
-                    isScrollable: true,
-                    labelStyle: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    indicatorSize: TabBarIndicatorSize.label,
-                    indicatorPadding: EdgeInsets.only(top: 12),
-                    tabs: [
-                      Text('Home'),
-                      Text('Videos'),
-                      Text('Shorts'),
-                      Text('Community'),
-                      Text('Playlists'),
-                      Text('Channels'),
-                      Text('About'),
-                    ],
-                  ),
-                ),
+                // const Padding(
+                //   padding: EdgeInsets.only(top: 14),
+                //   child: TabBar(
+                //     isScrollable: true,
+                //     labelStyle: TextStyle(
+                //       fontSize: 15,
+                //       fontWeight: FontWeight.w500,
+                //     ),
+                //     indicatorSize: TabBarIndicatorSize.label,
+                //     indicatorPadding: EdgeInsets.only(top: 12),
+                //     tabs: [
+                //       Text('Home'),
+                //       Text('Videos'),
+                //       Text('Shorts'),
+                //       Text('Community'),
+                //       Text('Playlists'),
+                //       Text('Channels'),
+                //       Text('About'),
+                //     ],
+                //   ),
+                // ),
 
                 const Expanded(
                   child: TabBarView(
