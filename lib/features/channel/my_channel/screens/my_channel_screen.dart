@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:youtube_clone/cores/colors.dart';
 
 import 'package:youtube_clone/cores/widgets/image_button.dart';
+import 'package:youtube_clone/features/channel/my_channel/widgets/buttons.dart';
+import 'package:youtube_clone/features/channel/my_channel/widgets/page_tab_bar.dart';
+import 'package:youtube_clone/features/channel/my_channel/widgets/tab_bar_view.dart';
 import 'package:youtube_clone/features/channel/my_channel/widgets/top_header.dart';
 
 class MyChannelScreen extends StatelessWidget {
@@ -10,15 +13,15 @@ class MyChannelScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
+    return const DefaultTabController(
       length: 7,
       child: Scaffold(
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.only(top: 20),
+            padding: EdgeInsets.only(top: 20),
             child: Column(
               children: [
-                const TopHeader(),
+                TopHeader(),
                 // const Center(
                 //   child: CircleAvatar(
                 //     radius: 38,
@@ -54,47 +57,51 @@ class MyChannelScreen extends StatelessWidget {
                 //   ),
                 // ),
       
-                const Text('More about this channel'),
+                // const Text('More about this channel'),
       
-                Padding(
-                  padding: const EdgeInsets.only(top: 16),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        flex: 3,
-                        child: Container(
-                          height: 41,
-                          decoration: const BoxDecoration(
-                            color: softBlueGreyBackGround,
-                            borderRadius: const BorderRadius.all(Radius.circular(10),),
-                          ),
-                          child: TextButton(
-                            onPressed: () {},
-                            child: const Text('Manage Videos', style: TextStyle(
-                              color: Colors.black,
-                            ),),
-                          ),
-                        ),
-                      ),
+                // Padding(
+                //   padding: const EdgeInsets.only(top: 16),
+                //   child: Row(
+                //     children: [
+                //       Expanded(
+                //         flex: 3,
+                //         child: Container(
+                //           height: 41,
+                //           decoration: const BoxDecoration(
+                //             color: softBlueGreyBackGround,
+                //             borderRadius: const BorderRadius.all(Radius.circular(10),),
+                //           ),
+                //           child: TextButton(
+                //             onPressed: () {},
+                //             child: const Text('Manage Videos', style: TextStyle(
+                //               color: Colors.black,
+                //             ),),
+                //           ),
+                //         ),
+                //       ),
                   
-                      Expanded(
-                        child: ImageButton(
-                          onPressed: () {}, 
-                          image: 'pen.png', 
-                          haveColor: true,
-                        ),
-                      ),
+                //       Expanded(
+                //         child: ImageButton(
+                //           onPressed: () {}, 
+                //           image: 'pen.png', 
+                //           haveColor: true,
+                //         ),
+                //       ),
                   
-                      Expanded(
-                        child: ImageButton(
-                          onPressed: () {}, 
-                          image: 'time-watched.png', 
-                          haveColor: true,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                //       Expanded(
+                //         child: ImageButton(
+                //           onPressed: () {}, 
+                //           image: 'time-watched.png', 
+                //           haveColor: true,
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
+
+                Buttons(),
+                PageTabBar(),
+                TabPages(),
       
                 // Create tab bar
                 // const Padding(
@@ -119,33 +126,33 @@ class MyChannelScreen extends StatelessWidget {
                 //   ),
                 // ),
 
-                const Expanded(
-                  child: TabBarView(
-                    children: [
-                      Center(
-                        child: Text('Home'),
-                      ),
-                      Center(
-                        child: Text('Videos'),
-                      ),
-                      Center(
-                        child: Text('Shorts'),
-                      ),
-                      Center(
-                        child: Text('Community'),
-                      ),
-                      Center(
-                        child: Text('Playlists'),
-                      ),
-                      Center(
-                        child: Text('Channel'),
-                      ),
-                      Center(
-                        child: Text('About'),
-                      ),
-                    ],
-                  ),
-                ),
+                // const Expanded(
+                //   child: TabBarView(
+                //     children: [
+                //       Center(
+                //         child: Text('Home'),
+                //       ),
+                //       Center(
+                //         child: Text('Videos'),
+                //       ),
+                //       Center(
+                //         child: Text('Shorts'),
+                //       ),
+                //       Center(
+                //         child: Text('Community'),
+                //       ),
+                //       Center(
+                //         child: Text('Playlists'),
+                //       ),
+                //       Center(
+                //         child: Text('Channel'),
+                //       ),
+                //       Center(
+                //         child: Text('About'),
+                //       ),
+                //     ],
+                //   ),
+                // ),
               ],
             ),
           ),
