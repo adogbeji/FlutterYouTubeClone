@@ -1,16 +1,21 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/models/user_model.dart';
 
 class TopHeader extends StatelessWidget {
-  const TopHeader({super.key});
+  const TopHeader({super.key, required this.user});
+
+  final UserModel user;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Center(
+        Center(
           child: CircleAvatar(
             radius: 38,
             backgroundColor: Colors.grey,
+            backgroundImage: CachedNetworkImageProvider(user.profilePic),
           ),
         ),
         const Padding(
