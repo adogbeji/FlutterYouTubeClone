@@ -19,15 +19,15 @@ class MyChannelScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return ref.watch(currentUserProvider)
               .when(
-                data: (currentUser) => const DefaultTabController(
+                data: (currentUser) => DefaultTabController(
       length: 7,
       child: Scaffold(
         body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.only(top: 20),
             child: Column(
               children: [
-                TopHeader(),
+                TopHeader(user: currentUser),
                 // const Center(
                 //   child: CircleAvatar(
                 //     radius: 38,

@@ -18,14 +18,15 @@ class TopHeader extends StatelessWidget {
             backgroundImage: CachedNetworkImageProvider(user.profilePic),
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             top: 10,
             bottom: 4,
           ),
           child: Text(
-            'Display Name',
-            style: TextStyle(
+            // 'Display Name',
+            user.displayName,
+            style: const TextStyle(
               fontSize: 26,
               fontWeight: FontWeight.bold,
             ),
@@ -34,14 +35,14 @@ class TopHeader extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(bottom: 9),
           child: RichText(
-            text: const TextSpan(
-              style: TextStyle(
+            text: TextSpan(
+              style: const TextStyle(
                 color: Colors.blueGrey,
               ),
               children: [
-                TextSpan(text: '@display-name '),
-                TextSpan(text: 'No subscriptions '),
-                TextSpan(text: 'No videos'),
+                TextSpan(text: '${user.username} '),
+                TextSpan(text: '${user.subscriptions.length} subscriptions '),
+                TextSpan(text: '${user.videos} videos'),
               ],
             ),
           ),
