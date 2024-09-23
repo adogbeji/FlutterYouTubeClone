@@ -6,9 +6,14 @@ class MyChannelSettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('My Channel Settings'),
-      ),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.only(top: 20),
+          child: Column(
+            children: [],
+          ),
+        ),
+      )
     );
   }
 }
