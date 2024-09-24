@@ -5,12 +5,14 @@ class MyChannelSettings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.only(top: 20),
           child: Column(
-            children: [],
+            children: [
+              Image.asset('assets/images/flutter background.png')
+            ],
           ),
         ),
       )
