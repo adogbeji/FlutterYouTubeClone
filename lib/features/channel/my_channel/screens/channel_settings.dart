@@ -7,15 +7,29 @@ class MyChannelSettings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: Column(
-            children: [
-              Image.asset('assets/images/flutter background.png')
-            ],
-          ),
+        child: Column(
+          children: [
+            Stack(
+              children: [
+            SizedBox(
+              width: double.infinity,
+              height: 170,
+              child: Image.asset('assets/images/flutter background.png', fit: BoxFit.cover,),
+            ),
+
+            const Positioned(
+              left: 180,
+              top: 60,
+              child: CircleAvatar(
+                radius: 30,
+                backgroundColor: Colors.grey,
+              ),
+            ),
+          ],
+            ),
+          ],
         ),
-      )
+      ),
     );
   }
 }
