@@ -25,6 +25,10 @@ class MyChannelSettings extends StatelessWidget {
                 backgroundColor: Colors.grey,
               ),
             ),
+
+            Positioned(
+              child: Image.asset('assets/icons/camera.png'),
+            ),
           ],
             ),
           ],
