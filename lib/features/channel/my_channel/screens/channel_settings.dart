@@ -43,10 +43,38 @@ class MyChannelSettings extends StatelessWidget {
               ],
             ),
 
+            const SizedBox(height: 14,),
+
             SettingsItem(
               identifier: 'Name',
               onPressed: () {},
               value: 'Ben',
+            ),
+
+            const SizedBox(height: 14,),
+
+            SettingsItem(
+              identifier: 'Handle',
+              onPressed: () {},
+              value: '@Ben01',
+            ),
+
+            const SizedBox(height: 14,),
+
+            SettingsItem(
+              identifier: 'Description',
+              onPressed: () {},
+              value: '',
+            ),
+
+            Row(
+              children: [
+                Text('Keep all my subscribers private'),
+                Switch(
+                  value: true,
+                  onChanged: (value) {},
+                ),
+              ],
             ),
           ],
         ),
