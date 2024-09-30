@@ -74,14 +74,21 @@ class _MyChannelSettingsState extends State<MyChannelSettings> {
               value: '',
             ),
 
-            Row(
-              children: [
-                const Text('Keep all my subscribers private'),
-                Switch(
-                  value: isSwitched,
-                  onChanged: (value) {},
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(left: 8, right: 8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text('Keep all my subscribers private'),
+                  Switch(
+                    value: isSwitched,
+                    onChanged: (value) {
+                      isSwitched = value;
+                      setState(() {});
+                    },
+                  ),
+                ],
+              ),
             ),
           ],
         ),
