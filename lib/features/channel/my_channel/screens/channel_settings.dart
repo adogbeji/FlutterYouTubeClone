@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 
 import 'package:youtube_clone/features/channel/users_channel/widgets/setting_field_item.dart';
 
-class MyChannelSettings extends StatelessWidget {
+class MyChannelSettings extends StatefulWidget {
   const MyChannelSettings({super.key});
+
+  @override
+  State<MyChannelSettings> createState() => _MyChannelSettingsState();
+}
+
+class _MyChannelSettingsState extends State<MyChannelSettings> {
+  bool isSwitched = false;
 
   @override
   Widget build(BuildContext context) {
@@ -69,9 +76,9 @@ class MyChannelSettings extends StatelessWidget {
 
             Row(
               children: [
-                Text('Keep all my subscribers private'),
+                const Text('Keep all my subscribers private'),
                 Switch(
-                  value: true,
+                  value: isSwitched,
                   onChanged: (value) {},
                 ),
               ],
