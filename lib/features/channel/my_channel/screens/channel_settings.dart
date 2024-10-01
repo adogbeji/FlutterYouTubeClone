@@ -75,7 +75,7 @@ class _MyChannelSettingsState extends State<MyChannelSettings> {
             ),
 
             Padding(
-              padding: const EdgeInsets.only(left: 8, right: 8),
+              padding: const EdgeInsets.only(left: 12, right: 8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -88,6 +88,17 @@ class _MyChannelSettingsState extends State<MyChannelSettings> {
                     },
                   ),
                 ],
+              ),
+            ),
+
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: Text(
+                'Changes made to your username and profile picture are only visible to YouTube and not other Google services',
+                style: TextStyle(
+                  color: Colors.grey,
+                ),
+                textAlign: TextAlign.center,
               ),
             ),
           ],
