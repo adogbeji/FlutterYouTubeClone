@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:youtube_clone/features/channel/users_channel/widgets/setting_field_item.dart';
 
-class MyChannelSettings extends StatefulWidget {
+class MyChannelSettings extends ConsumerStatefulWidget {
   const MyChannelSettings({super.key});
 
   @override
-  State<MyChannelSettings> createState() => _MyChannelSettingsState();
+  ConsumerState<MyChannelSettings> createState() => _MyChannelSettingsState();
 }
 
-class _MyChannelSettingsState extends State<MyChannelSettings> {
+class _MyChannelSettingsState extends ConsumerState<MyChannelSettings> {
   bool isSwitched = false;
 
   @override
@@ -92,11 +93,11 @@ class _MyChannelSettingsState extends State<MyChannelSettings> {
             ),
 
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
               child: Text(
                 'Changes made to your username and profile picture are only visible to YouTube and not other Google services',
                 style: TextStyle(
-                  color: Colors.grey,
+                  color: Colors.blueGrey,
                 ),
                 textAlign: TextAlign.center,
               ),
