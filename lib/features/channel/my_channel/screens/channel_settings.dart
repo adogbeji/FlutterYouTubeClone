@@ -1,7 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:youtube_clone/cores/screens/error_page.dart';
+import 'package:youtube_clone/cores/screens/loader.dart';
 
 import 'package:youtube_clone/features/channel/users_channel/widgets/setting_field_item.dart';
+import 'package:youtube_clone/views/screens/auth/provider/user_proivider.dart';
 
 class MyChannelSettings extends ConsumerStatefulWidget {
   const MyChannelSettings({super.key});
@@ -15,7 +19,9 @@ class _MyChannelSettingsState extends ConsumerState<MyChannelSettings> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ref.watch(currentUserProvider)
+              .when(
+                data: (currentUser) => Scaffold(
       body: SafeArea(
         child: Column(
           children: [
@@ -30,12 +36,13 @@ class _MyChannelSettingsState extends ConsumerState<MyChannelSettings> {
                   ),
                 ),
 
-                const Positioned(
+                Positioned(
                   left: 180,
                   top: 60,
                   child: CircleAvatar(
                     radius: 30,
                     backgroundColor: Colors.grey,
+                    backgroundImage: CachedNetworkImageProvider(currentUser.profilePic),
                   ),
                 ),
 
@@ -105,6 +112,9 @@ class _MyChannelSettingsState extends ConsumerState<MyChannelSettings> {
           ],
         ),
       ),
-    );
+    ),
+                error: (error, stackTrace) => const ErrorScreen(),
+                loading: () => const Loader(),
+              );
   }
 }
