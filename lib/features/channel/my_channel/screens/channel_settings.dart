@@ -103,7 +103,19 @@ class _MyChannelSettingsState extends ConsumerState<MyChannelSettings> {
                   ),
                   SettingsItem(
                     identifier: 'Description',
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => SettingsDialog(
+                          identifier: 'Description',
+                          onSave: (description) {
+                            ref
+                                .watch(editSettingsProvider)
+                                .editUserName(description);
+                          },
+                        ),
+                      );
+                    },
                     value: '',
                   ),
                   Padding(
