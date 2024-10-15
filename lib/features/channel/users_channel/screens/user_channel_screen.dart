@@ -7,13 +7,26 @@ class UserChannelScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: Column(
-            children: [
-              Image.asset('assets/images/flutter background.png'),
-            ],
-          ),
+        child: Column(
+          children: [
+            Image.asset('assets/images/flutter background.png'),
+            const Row(
+              children: [
+                CircleAvatar(
+                  radius: 30,
+                  backgroundColor: Colors.grey,
+                ),
+
+                Column(
+                  children: [
+                    Text('Display Name'),
+                    Text('Username'),
+                    // RichText(text: text)
+                  ],
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

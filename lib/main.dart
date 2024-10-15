@@ -8,12 +8,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:youtube_clone/cores/screens/loader.dart';
 
 import 'package:youtube_clone/views/home_screen.dart';
+import 'package:youtube_clone/views/screens/auth/login_screen.dart';
 import 'package:youtube_clone/views/screens/username_screen.dart';
 import 'package:youtube_clone/features/channel/my_channel/screens/my_channel_screen.dart';
+import 'package:youtube_clone/features/channel/users_channel/screens/user_channel_screen.dart';
+
 import 'package:youtube_clone/features/channel/my_channel/screens/channel_settings.dart';
 import 'firebase_options.dart';
 
-import 'package:youtube_clone/views/screens/auth/login_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized(); // Ensures all Flutter widgets have been successfully initialised
@@ -40,7 +42,8 @@ class MyApp extends StatelessWidget {
       // home: const UsernameScreen(),
       // home: const HomeScreen(),
       // home: const MyChannelScreen(),
-      home: const MyChannelSettings(),
+      // home: const MyChannelSettings(),
+      home: const UserChannelScreen(),
 
       // home: StreamBuilder(
       //   stream: FirebaseAuth.instance.authStateChanges(),  // Checks what's happening in Firebase Auth
