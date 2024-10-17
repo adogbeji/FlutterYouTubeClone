@@ -18,33 +18,42 @@ class UserChannelScreen extends StatelessWidget {
                     radius: 38,
                     backgroundColor: Colors.grey,
                   ),
-                  Column(
-                    children: [
-                      const Text(
-                        'Display Name',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Display Name',
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      
-                      const Text(
-                        'Username',
-                        style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold,
+                        
+                        const Text(
+                          'Username',
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Colors.blueGrey,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      RichText(
-                        text: const TextSpan(
-                          style: TextStyle(color: Colors.blueGrey),
-                          children: [
-                            TextSpan(text: 'No Subscriptions'),
-                            TextSpan(text: 'No Videos'),
-                          ],
+                        RichText(
+                          text: const TextSpan(
+                            style: TextStyle(
+                              fontSize: 13,
+                              color: Colors.blueGrey,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            children: [
+                              TextSpan(text: 'No Subscriptions'),
+                              TextSpan(text: 'No Videos'),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ],
               ),
