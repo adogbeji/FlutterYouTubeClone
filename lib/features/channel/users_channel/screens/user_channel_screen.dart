@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/cores/widgets/flat_button.dart';
 
 class UserChannelScreen extends StatelessWidget {
   const UserChannelScreen({super.key});
@@ -8,6 +9,7 @@ class UserChannelScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Image.asset('assets/images/flutter background.png'),
             Padding(
@@ -47,7 +49,7 @@ class UserChannelScreen extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             ),
                             children: [
-                              TextSpan(text: 'No Subscriptions'),
+                              TextSpan(text: 'No Subscriptions '),
                               TextSpan(text: 'No Videos'),
                             ],
                           ),
@@ -57,6 +59,12 @@ class UserChannelScreen extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+
+            FlatButton(
+              text: 'SUBSCRIBE', 
+              onPressed: () {}, 
+              colour: Colors.black,
             ),
           ],
         ),
