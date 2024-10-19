@@ -9,6 +9,8 @@ class UserChannelScreen extends StatefulWidget {
 }
 
 class _UserChannelScreenState extends State<UserChannelScreen> {
+  bool haveVideos = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +39,6 @@ class _UserChannelScreenState extends State<UserChannelScreen> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        
                         const Text(
                           'Username',
                           style: TextStyle(
@@ -65,15 +66,28 @@ class _UserChannelScreenState extends State<UserChannelScreen> {
                 ],
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.only(top: 20, left: 8, right: 8),
               child: FlatButton(
-                text: 'SUBSCRIBE', 
-                onPressed: () {}, 
+                text: 'SUBSCRIBE',
+                onPressed: () {},
                 colour: Colors.black,
               ),
             ),
+            haveVideos
+                ? const SizedBox()
+                : Center(
+                    child: Padding(
+                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.2),
+                      child: const Text(
+                        'No Videos',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
           ],
         ),
       ),
