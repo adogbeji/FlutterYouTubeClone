@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/cores/widgets/flat_button.dart';
 
-class UserChannelScreen extends StatelessWidget {
+class UserChannelScreen extends StatefulWidget {
   const UserChannelScreen({super.key});
 
+  @override
+  State<UserChannelScreen> createState() => _UserChannelScreenState();
+}
+
+class _UserChannelScreenState extends State<UserChannelScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,10 +66,13 @@ class UserChannelScreen extends StatelessWidget {
               ),
             ),
 
-            FlatButton(
-              text: 'SUBSCRIBE', 
-              onPressed: () {}, 
-              colour: Colors.black,
+            Padding(
+              padding: const EdgeInsets.only(top: 20, left: 8, right: 8),
+              child: FlatButton(
+                text: 'SUBSCRIBE', 
+                onPressed: () {}, 
+                colour: Colors.black,
+              ),
             ),
           ],
         ),
