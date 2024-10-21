@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:youtube_clone/cores/screens/error_page.dart';
 import 'package:youtube_clone/cores/screens/loader.dart';
 import 'package:youtube_clone/cores/widgets/image_button.dart';
+import 'package:youtube_clone/features/content/bottom_navigation.dart';
 import 'package:youtube_clone/views/screens/auth/provider/user_proivider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -85,6 +86,7 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: const BottomNavigation(),
     );
   }
 }

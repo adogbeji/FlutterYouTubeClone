@@ -40,10 +40,10 @@ class MyApp extends StatelessWidget {
       ),
       // home: const LoginScreen(),
       // home: const UsernameScreen(),
-      // home: const HomeScreen(),
+      home: const HomeScreen(),
       // home: const MyChannelScreen(),
       // home: const MyChannelSettings(),
-      home: const UserChannelScreen(),
+      // home: const UserChannelScreen(),
 
       // home: StreamBuilder(
       //   stream: FirebaseAuth.instance.authStateChanges(),  // Checks what's happening in Firebase Auth
