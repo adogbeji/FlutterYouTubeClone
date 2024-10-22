@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class BottomNavigation extends StatelessWidget {
-  const BottomNavigation({Key? key}) : super(key: key);
+  const BottomNavigation({Key? key, required this.onPressed}) : super(key: key);
+
+  final Function(int index) onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +50,7 @@ class BottomNavigation extends StatelessWidget {
           GButton(icon: Icons.search, text: "Search"),
           GButton(icon: Icons.heart_broken, text: "Log out"),
         ],
+        onTabChange: onPressed,
       ),
     );
   }
