@@ -9,14 +9,9 @@ import 'package:youtube_clone/cores/widgets/image_button.dart';
 import 'package:youtube_clone/features/content/bottom_navigation.dart';
 import 'package:youtube_clone/views/screens/auth/provider/user_proivider.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

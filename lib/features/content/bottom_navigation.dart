@@ -2,11 +2,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-class BottomNavigation extends StatelessWidget {
+class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key, required this.onPressed}) : super(key: key);
 
   final Function(int index) onPressed;
 
+  @override
+  State<BottomNavigation> createState() => _BottomNavigationState();
+}
+
+class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -50,7 +55,7 @@ class BottomNavigation extends StatelessWidget {
           GButton(icon: Icons.search, text: "Search"),
           GButton(icon: Icons.heart_broken, text: "Log out"),
         ],
-        onTabChange: onPressed,
+        onTabChange: widget.onPressed,
       ),
     );
   }
