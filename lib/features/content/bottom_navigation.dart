@@ -12,6 +12,8 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
+  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -56,6 +58,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
           GButton(icon: Icons.heart_broken, text: "Log out"),
         ],
         onTabChange: widget.onPressed,
+        selectedIndex: currentIndex,
       ),
     );
   }
