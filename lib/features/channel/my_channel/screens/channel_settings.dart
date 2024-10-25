@@ -7,7 +7,7 @@ import 'package:youtube_clone/features/channel/my_channel/repository/edit_field.
 import 'package:youtube_clone/features/channel/users_channel/widgets/edit_setting_dialog.dart';
 
 import 'package:youtube_clone/features/channel/users_channel/widgets/setting_field_item.dart';
-import 'package:youtube_clone/views/screens/auth/provider/user_proivider.dart';
+import 'package:youtube_clone/views/screens/auth/provider/user_provoider.dart';
 
 class MyChannelSettings extends ConsumerStatefulWidget {
   const MyChannelSettings({super.key});

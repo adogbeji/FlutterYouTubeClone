@@ -10,7 +10,7 @@ import 'package:youtube_clone/features/channel/my_channel/widgets/buttons.dart';
 import 'package:youtube_clone/features/channel/my_channel/widgets/page_tab_bar.dart';
 import 'package:youtube_clone/features/channel/my_channel/widgets/tab_bar_view.dart';
 import 'package:youtube_clone/features/channel/my_channel/widgets/top_header.dart';
-import 'package:youtube_clone/views/screens/auth/provider/user_proivider.dart';
+import 'package:youtube_clone/views/screens/auth/provider/user_provoider.dart';
 
 class MyChannelScreen extends ConsumerWidget {
   const MyChannelScreen({super.key});

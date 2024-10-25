@@ -7,7 +7,8 @@ import 'package:youtube_clone/cores/screens/error_page.dart';
 import 'package:youtube_clone/cores/screens/loader.dart';
 import 'package:youtube_clone/cores/widgets/image_button.dart';
 import 'package:youtube_clone/features/content/bottom_navigation.dart';
-import 'package:youtube_clone/views/screens/auth/provider/user_proivider.dart';
+import 'package:youtube_clone/views/screens/auth/provider/user_provoider.dart';
+import 'package:youtube_clone/views/widgets/screens_list.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -90,11 +91,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
+
+            Expanded(child: screens[currentIndex],),
           ],
         ),
       ),
       bottomNavigationBar: BottomNavigation(
-        onPressed: (index) {},
+        onPressed: (index) {
+          if (index != 2) {
+            currentIndex = index;
+            setState(() {});
+          }
+        },
       ),
     );
   }
