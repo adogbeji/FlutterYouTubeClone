@@ -7,6 +7,7 @@ import 'package:youtube_clone/cores/screens/error_page.dart';
 import 'package:youtube_clone/cores/screens/loader.dart';
 import 'package:youtube_clone/cores/widgets/image_button.dart';
 import 'package:youtube_clone/features/content/bottom_navigation.dart';
+import 'package:youtube_clone/features/upload/upload_bottom_sheet.dart';
 import 'package:youtube_clone/views/screens/auth/provider/user_provoider.dart';
 import 'package:youtube_clone/views/widgets/screens_list.dart';
 
@@ -101,6 +102,8 @@ class _HomeScreenState extends State<HomeScreen> {
           if (index != 2) {
             currentIndex = index;
             setState(() {});
+          } else {
+            showModalBottomSheet(context: context, builder: (ctx) =>  const CreateBottomSheet());
           }
         },
       ),
