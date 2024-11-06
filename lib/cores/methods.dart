@@ -20,3 +20,5 @@ pickVideo() async {
   if (video != null) {}
   return video;
 }
+
+putFileInStorage() async {}
