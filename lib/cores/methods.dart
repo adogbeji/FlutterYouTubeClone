@@ -2,6 +2,7 @@
 
 import 'dart:io';
 
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -21,4 +22,6 @@ pickVideo() async {
   return video;
 }
 
-putFileInStorage() async {}
+putFileInStorage(file, number, fileType) async {
+  FirebaseStorage.instance.ref().child('$fileType/$number');
+}
