@@ -23,5 +23,8 @@ pickVideo() async {
 }
 
 putFileInStorage(file, number, fileType) async {
-  FirebaseStorage.instance.ref().child('$fileType/$number');
+  final ref = FirebaseStorage.instance.ref().child('$fileType/$number');
+  final upload = ref.putFile(file);
+  final snapshot = await upload;
+  String downloadURL = await snapshot.ref.getDownloadURL();
 }
