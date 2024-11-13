@@ -27,4 +27,5 @@ putFileInStorage(file, number, fileType) async {
   final upload = ref.putFile(file);
   final snapshot = await upload;
   String downloadURL = await snapshot.ref.getDownloadURL();
+  return downloadURL;
 }
