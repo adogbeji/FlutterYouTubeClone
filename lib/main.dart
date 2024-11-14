@@ -12,6 +12,7 @@ import 'package:youtube_clone/views/screens/auth/login_screen.dart';
 import 'package:youtube_clone/views/screens/username_screen.dart';
 import 'package:youtube_clone/features/channel/my_channel/screens/my_channel_screen.dart';
 import 'package:youtube_clone/features/channel/users_channel/screens/user_channel_screen.dart';
+import 'package:youtube_clone/features/upload/long_video/video_details_screen.dart';
 
 import 'package:youtube_clone/features/channel/my_channel/screens/channel_settings.dart';
 import 'firebase_options.dart';
@@ -40,10 +41,11 @@ class MyApp extends StatelessWidget {
       ),
       // home: const LoginScreen(),
       // home: const UsernameScreen(),
-      home: const HomeScreen(),
+      // home: const HomeScreen(),
       // home: const MyChannelScreen(),
       // home: const MyChannelSettings(),
       // home: const UserChannelScreen(),
+      home: const VideoDetailsScreen(),
 
       // home: StreamBuilder(
       //   stream: FirebaseAuth.instance.authStateChanges(),  // Checks what's happening in Firebase Auth

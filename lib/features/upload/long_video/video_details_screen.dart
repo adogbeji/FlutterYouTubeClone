@@ -6,9 +6,16 @@ class VideoDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Video Details Screen'),
-      ),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.only(top: 20),
+          child: Column(
+            children: [
+              TextField(),
+            ],
+          ),
+        ),
+      )
     );
   }
 }
