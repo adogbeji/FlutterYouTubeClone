@@ -11,7 +11,18 @@ class VideoDetailsScreen extends StatelessWidget {
           padding: EdgeInsets.only(top: 20),
           child: Column(
             children: [
-              TextField(),
+              Text('Enter the title'),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Enter title',
+                  prefixIcon: Icon(Icons.title),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
