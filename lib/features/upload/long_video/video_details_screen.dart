@@ -5,14 +5,14 @@ class VideoDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
         body: SafeArea(
       child: Padding(
-        padding: EdgeInsets.only(top: 20),
+        padding: const EdgeInsets.only(top: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Enter the title',
               style: TextStyle(
                 fontSize: 15,
@@ -20,9 +20,9 @@ class VideoDetailsScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 5,),
+            const SizedBox(height: 5,),
 
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Enter title',
                 prefixIcon: Icon(Icons.title),
@@ -34,7 +34,9 @@ class VideoDetailsScreen extends StatelessWidget {
               ),
             ),
 
-            Text(
+            const SizedBox(height: 10,),
+
+            const Text(
               'Enter the description',
               style: TextStyle(
                 fontSize: 15,
@@ -42,9 +44,9 @@ class VideoDetailsScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 5,),
+            const SizedBox(height: 5,),
 
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Enter description',
                 border: OutlineInputBorder(
@@ -52,6 +54,12 @@ class VideoDetailsScreen extends StatelessWidget {
                     color: Colors.blue,
                   ),
                 ),
+              ),
+            ),
+
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.blue,
               ),
             ),
           ],
