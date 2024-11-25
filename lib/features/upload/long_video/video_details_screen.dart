@@ -10,7 +10,7 @@ class VideoDetailsScreen extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(top: 20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const Text(
               'Enter the title',
@@ -57,9 +57,17 @@ class VideoDetailsScreen extends StatelessWidget {
               ),
             ),
 
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.blue,
+            Padding(
+              padding: const EdgeInsets.only(top: 12),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.all(Radius.circular(11),),
+                ),
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text('SELECT THUMBNAIL', style: TextStyle(color: Colors.white,),),
+                ),
               ),
             ),
           ],
