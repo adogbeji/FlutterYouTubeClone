@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class VideoDetailsScreen extends StatelessWidget {
+class VideoDetailsScreen extends StatefulWidget {
   const VideoDetailsScreen({super.key});
 
+  @override
+  State<VideoDetailsScreen> createState() => _VideoDetailsScreenState();
+}
+
+class _VideoDetailsScreenState extends State<VideoDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,6 +52,7 @@ class VideoDetailsScreen extends StatelessWidget {
             const SizedBox(height: 5,),
 
             const TextField(
+              maxLines: 5,
               decoration: InputDecoration(
                 labelText: 'Enter description',
                 border: OutlineInputBorder(
