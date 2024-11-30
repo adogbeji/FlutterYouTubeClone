@@ -8,6 +8,10 @@ class VideoDetailsScreen extends StatefulWidget {
 }
 
 class _VideoDetailsScreenState extends State<VideoDetailsScreen> {
+  final titleController = TextEditingController();
+  final descriptionController = TextEditingController();
+  bool isThumbnailSelected = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,8 +31,9 @@ class _VideoDetailsScreenState extends State<VideoDetailsScreen> {
 
             const SizedBox(height: 5,),
 
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              controller: titleController,
+              decoration: const InputDecoration(
                 labelText: 'Enter title',
                 prefixIcon: Icon(Icons.title),
                 border: OutlineInputBorder(
@@ -51,9 +56,10 @@ class _VideoDetailsScreenState extends State<VideoDetailsScreen> {
 
             const SizedBox(height: 5,),
 
-            const TextField(
+            TextField(
               maxLines: 5,
-              decoration: InputDecoration(
+              controller: descriptionController,
+              decoration: const InputDecoration(
                 labelText: 'Enter description',
                 border: OutlineInputBorder(
                   borderSide: BorderSide(
