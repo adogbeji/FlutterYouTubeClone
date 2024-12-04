@@ -72,16 +72,29 @@ class _VideoDetailsScreenState extends State<VideoDetailsScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 12),
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.blue,
                   borderRadius: BorderRadius.all(Radius.circular(11),),
                 ),
                 child: TextButton(
                   onPressed: () {},
-                  child: Text('SELECT THUMBNAIL', style: TextStyle(color: Colors.white,),),
+                  child: const Text('SELECT THUMBNAIL', style: TextStyle(color: Colors.white,),),
                 ),
               ),
             ),
+            isThumbnailSelected ? Padding(
+              padding: const EdgeInsets.only(top: 12),
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.all(Radius.circular(11),),
+                ),
+                child: TextButton(
+                  onPressed: () {},
+                  child: const Text('PUBLISH', style: TextStyle(color: Colors.white,),),
+                ),
+              ),
+            ): const SizedBox(),
           ],
         ),
       ),
