@@ -22,6 +22,14 @@ pickVideo() async {
   return video;
 }
 
+pickImage() async {
+  XFile? file = await ImagePicker().pickImage(source: ImageSource.gallery);
+  File image = File(file!.path);
+
+  if (image != null) {}
+  return image;
+}
+
 putFileInStorage(file, number, fileType) async {
   final ref = FirebaseStorage.instance.ref().child('$fileType/$number');
   final upload = ref.putFile(file);

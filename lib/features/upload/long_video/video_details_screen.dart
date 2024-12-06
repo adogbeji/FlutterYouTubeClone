@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/cores/methods.dart';
 
 class VideoDetailsScreen extends StatefulWidget {
   const VideoDetailsScreen({super.key});
@@ -77,7 +78,9 @@ class _VideoDetailsScreenState extends State<VideoDetailsScreen> {
                   borderRadius: BorderRadius.all(Radius.circular(11),),
                 ),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    pickImage();
+                  },
                   child: const Text('SELECT THUMBNAIL', style: TextStyle(color: Colors.white,),),
                 ),
               ),
