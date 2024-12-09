@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/cores/methods.dart';
 
@@ -12,6 +14,7 @@ class _VideoDetailsScreenState extends State<VideoDetailsScreen> {
   final titleController = TextEditingController();
   final descriptionController = TextEditingController();
   bool isThumbnailSelected = false;
+  File? image;
 
   @override
   Widget build(BuildContext context) {
@@ -79,12 +82,16 @@ class _VideoDetailsScreenState extends State<VideoDetailsScreen> {
                 ),
                 child: TextButton(
                   onPressed: () {
-                    pickImage();
+                    image = pickImage();
+                    isThumbnailSelected = true;
+                    setState(() {});
                   },
                   child: const Text('SELECT THUMBNAIL', style: TextStyle(color: Colors.white,),),
                 ),
               ),
             ),
+            isThumbnailSelected ? Image.file(image!): SizedBox(), 
+
             isThumbnailSelected ? Padding(
               padding: const EdgeInsets.only(top: 12),
               child: Container(
