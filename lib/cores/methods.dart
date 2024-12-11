@@ -22,11 +22,11 @@ pickVideo() async {
   return video;
 }
 
-pickImage() async {
+Future<File?> pickImage() async {
   XFile? file = await ImagePicker().pickImage(source: ImageSource.gallery);
   File image = File(file!.path);
 
-  if (image != null) {}
+  // if (image != null) {}
   return image;
 }
 
