@@ -90,7 +90,10 @@ class _VideoDetailsScreenState extends State<VideoDetailsScreen> {
                 ),
               ),
             ),
-            isThumbnailSelected ? Image.file(image!, cacheHeight: 160, cacheWidth: 400,): SizedBox(), 
+            isThumbnailSelected ? Padding(
+              padding: const EdgeInsets.only(top: 12, bottom: 12),
+              child: Image.file(image!, cacheHeight: 160, cacheWidth: 400,),
+            ): SizedBox(), 
 
             isThumbnailSelected ? Padding(
               padding: const EdgeInsets.only(top: 12),
