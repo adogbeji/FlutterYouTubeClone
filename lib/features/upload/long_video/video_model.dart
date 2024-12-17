@@ -5,4 +5,7 @@ class VideoModel {
   final String datePublished;
   final String views;
   final String videoID;
+  final String userID;
+  final List likes;
+  final String type;
 }
